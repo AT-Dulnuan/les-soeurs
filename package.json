@@ -1,0 +1,26 @@
+{
+  "name": "les-soeurs",
+  "version": "1.0.0",
+  "description": "Les Soeurs website",
+  "main": "sass/main.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "node-sass --omit-source-map-url sass/main.scss dist/css/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AT-Dulnuan/les-souers.git"
+  },
+  "author": "Abigail Dulnuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AT-Dulnuan/les-souers/issues"
+  },
+  "homepage": "https://github.com/AT-Dulnuan/les-souers#readme",
+  "devDependencies": {
+    "bulma": "^0.8.2",
+    "node-sass": "^4.14.1"
+  }
+}
