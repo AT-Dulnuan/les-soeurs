@@ -1,2 +1,2 @@
-# les-souers
-Les Souers website
+# les-soeurs
+Les Soeurs website
