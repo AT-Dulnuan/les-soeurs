@@ -18,7 +18,7 @@
 				$msgType = 'is-danger';
 			} else {
 				
-				$toEmail = ''; // Les Soeurs Email
+				$toEmail = 'info@lessoeurs.com.ph';
 				$subject = 'Contact Request From '.$fullName;
 				$body = '<h2>Contact Form</h2>
                     <p><strong>Full Name: </strong>'.$fullName.'</p>
@@ -85,7 +85,7 @@
                 <div class="navbar-end">
                     <a href="index.html" class="navbar-item nav-link">Home</a>
                     <a href="about.html" class="navbar-item nav-link">About</a>
-                    <a href="services.html" class="navbar-item nav-link is-active">Services</a>
+                    <a href="services.html" class="navbar-item nav-link">Services</a>
                     <a href="projects.html" class="navbar-item nav-link">Projects</a>
                     <a href="contact.php" class="navbar-item nav-link is-active">Contact</a>
                     <p class="navbar-item">

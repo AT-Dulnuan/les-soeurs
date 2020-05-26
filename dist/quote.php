@@ -14,9 +14,6 @@
         $budget = htmlspecialchars($_POST['budget']);
         $otherInfo = htmlspecialchars($_POST['otherInfo']);
 
-        if(empty($otherInfo)) {
-            $otherInfo = 'No extra information provided.';
-        }
         
 		if(!empty($fullName) && !empty($email) && !empty($phone) && !empty($propertyType) && !empty($location) && !empty($size) && !empty($budget)){
 			
@@ -25,8 +22,12 @@
 				$msgText = 'Please use a valid email address';
 				$msgType = 'is-danger';
 			} else {
+
+                if(empty($otherInfo)) {
+                    $otherInfo = 'No extra information provided.';
+                }
 				
-				$toEmail = '';
+				$toEmail = 'info@lessoeurs.com.ph';
 				$subject = 'Quote Request From '.$fullName;
 				$body = '<h2>Quote Request Form</h2>
                     <p><strong>Full Name: </strong>'.$fullName.'</p>
@@ -80,7 +81,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
+                <a class="navbar-item" href="index.html">
                     <img src="./assets/logo-icon.png">
                 </a>
 
@@ -133,52 +134,54 @@
         <?php endif; ?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="field">
-                    <label class="label">Full Name<span class="fieldRequired">*</span></label>
+                    <label class="label">Full Name<span class="has-text-danger">*</span></label>
                     <div class="control">
                         <input class="input" type="text" name="fullName" placeholder="John Doe" value="<?php echo isset($_POST['fullName']) ? $fullName : ''; ?>">
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Email<span class="fieldRequired">*</span></label>
+                    <label class="label">Email<span class="has-text-danger">*</span></label>
                     <div class="control">
                         <input class="input" type="email" name="email" placeholder="john.doe@mail.com" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Contact Number<span class="fieldRequired">*</span></label>
+                    <label class="label">Contact Number<span class="has-text-danger">*</span></label>
                     <div class="control">
                         <input class="input" type="text" name="phone" placeholder="09991234567" value="<?php echo isset($_POST['phone']) ? $phone : ''; ?>">
                     </div>
                 </div>
                 <div class="field is-horizontal">
-                    <div class="field">
-                        <label class="label">Type of Property<span class="fieldRequired">*</span></label>
-                        <div class="control">
-                            <div class="select">
-                                <select name="propertyOptions">
-                                    <option>Condominium</option>
-                                    <option>House and Lot</option>
-                                    <option>Commercial Space</option>
-                                    <option>Others</option>
-                                </select>
+                    <div class="field-body">
+                        <div class="field">
+                            <label class="label">Type of Property<span class="has-text-danger">*</span></label>
+                            <div class="control is-expanded">
+                                <div class="select is-fullwidth">
+                                    <select name="propertyOptions">
+                                        <option>Condominium</option>
+                                        <option>House and Lot</option>
+                                        <option>Commercial Space</option>
+                                        <option>Others</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Location of Property<span class="fieldRequired">*</span></label>
-                        <div class="control">
-                            <input class="input" type="text" name="location" placeholder="Property Address" value="<?php echo isset($_POST['location']) ? $location : ''; ?>">
+                        <div class="field">
+                            <label class="label">Location of Property<span class="has-text-danger">*</span></label>
+                            <div class="control is-expanded">
+                                <input class="input" type="text" name="location" placeholder="Property Address" value="<?php echo isset($_POST['location']) ? $location : ''; ?>">
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Property Area Size<span class="fieldRequired">*</span></label>
+                    <label class="label">Property Area Size<span class="has-text-danger">*</span></label>
                     <div class="control">
                         <input class="input" type="text" name="size" placeholder="1000 sqm" value="<?php echo isset($_POST['size']) ? $size : ''; ?>">
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Budget<span class="fieldRequired">*</span></label>
+                    <label class="label">Budget<span class="has-text-danger">*</span></label>
                     <div class="control">
                         <input class="input" type="text" name="budget" value="<?php echo isset($_POST['budget']) ? $budget : ''; ?>">
                     </div>
