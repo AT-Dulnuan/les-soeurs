@@ -107,8 +107,23 @@ footer {
     footer ul li i {
       margin: 0 0.3rem; }
 
+@keyframes zoom {
+  0% {
+    transform: scale(1, 1);
+    transform-origin: 50% 50%; }
+  100% {
+    transform: scale(1.2, 1.2);
+    transform-origin: 50% 0; } }
+
+#home .slick-slider div.slick-active img {
+  animation: zoom 9s ease-in-out; }
+
 #home .image-slider .img {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
+  #home .image-slider .img img {
+    object-fit: cover;
+    overflow: hidden; }
 
 #home .image-slider .overlay {
   position: absolute;
@@ -130,8 +145,13 @@ footer {
     opacity: 0;
     font-size: 1.4rem;
     transition: all ease-in-out 1s; }
+    #home .image-slider .overlay #sliderText span {
+      height: 0;
+      transition: all ease-in-out 1s; }
     #home .image-slider .overlay #sliderText.onImage {
       opacity: 1; }
+      #home .image-slider .overlay #sliderText.onImage span {
+        height: 100%; }
 
 #home section.about-stack {
   background-color: #F9F9F9; }
@@ -258,8 +278,10 @@ footer {
     .tile-container a:hover .overlay {
       opacity: 1; }
   #home .image-slider .img {
-    height: 600px;
+    height: 700px;
     width: 100vw; }
+    #home .image-slider .img .overlay #sliderText {
+      font-size: 3rem; }
     #home .image-slider .img img {
       object-fit: cover;
       height: 100%;
@@ -270,7 +292,17 @@ footer {
     text-align: right;
     align-self: center; }
   #services section.move-in .image-container {
-    height: 500px; } }
+    height: 500px; }
+  #project1 #image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    justify-items: stretch;
+    align-items: center; }
+    #project1 #image-gallery .tile-container {
+      height: 400px;
+      width: 400px; } }
 
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {

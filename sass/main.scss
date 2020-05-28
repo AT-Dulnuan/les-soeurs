@@ -168,10 +168,32 @@ footer {
     }
 }
 
+@keyframes zoom {
+    0% {
+        transform: scale(1, 1);
+        transform-origin: 50% 50%;
+    }
+
+    100% {
+        transform: scale(1.2, 1.2);
+        transform-origin: 50% 0;
+    }
+}
+
 #home {
+    .slick-slider div.slick-active img{
+        animation: zoom 9s ease-in-out;
+    }
     .image-slider {
+
         .img {
             position: relative;
+            overflow: hidden;
+
+            img {
+                object-fit: cover;
+                overflow: hidden;
+            }
         }
 
         .overlay {
@@ -192,14 +214,21 @@ footer {
                 color: $white;
                 font-weight: bold;
                 width: 100%;
-                // height: 0;
                 opacity: 0;
                 font-size: 1.4rem;
                 transition: all ease-in-out 1s;
 
+                span {
+                    height: 0;
+                    transition: all ease-in-out 1s;
+                }
+
                 &.onImage {
-                    // height: 100%;
                     opacity: 1;
+
+                    span {
+                        height: 100%;
+                    }
                 }
             }
         }
@@ -323,10 +352,12 @@ footer {
         background-position: center;
     }
 
-    #image-gallery .img-container {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+    #image-gallery {
+        .img-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
     }
 
     #image-gallery img {
@@ -435,8 +466,12 @@ footer {
     #home {
         .image-slider {
             .img {
-                height: 600px;
+                height: 700px;
                 width: 100vw;
+
+                .overlay #sliderText {
+                    font-size: 3rem;
+                }
 
                 img {
                     object-fit: cover;
@@ -461,7 +496,25 @@ footer {
             }
         }
     }
+
+    #project1 {
+        #image-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 1rem;
+            justify-items: stretch;
+            align-items: center;
+
+            .tile-container {
+                height: 400px;
+                width: 400px;
+            }
+        }
+    }
 }
+
+
 
 
 @import "../node_modules/bulma/bulma.sass";
