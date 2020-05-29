@@ -26,13 +26,13 @@ html body {
     overflow: hidden;
 }
 
-// Mobile Nav
 .stop-scroll {
     height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
+// Mobile Nav
 .menu-mobile {
     position: fixed;
     top: $navbar-height;

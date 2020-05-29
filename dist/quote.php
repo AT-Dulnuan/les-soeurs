@@ -81,7 +81,6 @@
 </head>
 
 <body id="quote">
-    <div id="navOverlay"></div>
     <nav class="navbar" role="navigation" aria-label="main navigation" data-aos="fade">
         <div class="container">
             <div class="navbar-brand">
