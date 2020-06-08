@@ -115,6 +115,9 @@ footer {
     transform: scale(1.2, 1.2);
     transform-origin: 50% 0; } }
 
+input.extra-form {
+  display: none !important; }
+
 #home .slick-slider div.slick-active img {
   animation: zoom 9s ease-in-out; }
 

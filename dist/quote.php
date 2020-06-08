@@ -13,6 +13,7 @@
         $size = htmlspecialchars($_POST['size']);
         $budget = htmlspecialchars($_POST['budget']);
         $otherInfo = htmlspecialchars($_POST['otherInfo']);
+        $extra = htmlspecialchars($_POST['extra-form']);
 
         
 		if(!empty($fullName) && !empty($email) && !empty($phone) && !empty($propertyType) && !empty($location) && !empty($size) && !empty($budget)){
@@ -27,7 +28,7 @@
                     $otherInfo = 'No extra information provided.';
                 }
 				
-				$toEmail = 'info@lessoeurs.com.ph';
+				$toEmail = 'info@lessoeursph.com';
 				$subject = 'Quote Request From '.$fullName;
 				$body = '<h2>Quote Request Form</h2>
                     <p><strong>Full Name: </strong>'.$fullName.'</p>
@@ -47,14 +48,18 @@
 				
                 $headers .= "From: " .$fullName. "<".$email.">". "\r\n";
 
-				if(mail($toEmail, $subject, $body, $headers)){
-					$msgText = 'Your request has been submitted! We will get back to you shortly.';
-                    $msgType = 'is-success';
-                    $disableForm = 'disabled';
-				} else {
-					$msgText = 'Unfortunately, your request was not sent. Please try again in a while.';
-					$msgType = 'is-danger';
-				}
+                if(empty($extra)) {
+                    
+                    if(mail($toEmail, $subject, $body, $headers)){
+                        $msgText = 'Your request has been submitted! We will get back to you shortly.';
+                        $msgType = 'is-success';
+                        $disableForm = 'disabled';
+                    } else {
+                        $msgText = 'Unfortunately, your request was not sent. Please try again in a while.';
+                        $msgType = 'is-danger';
+                    }
+                }
+
 			}
 		} else {
 			$msgText = 'Kindly fill in all the required fields';
@@ -69,7 +74,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Souers | Get a Quote</title>
+    <title>Les Soeurs | Get a Quote</title>
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -195,6 +200,7 @@
                         <textarea class="textarea" name="otherInfo" placeholder="Start typing here..."><?php echo isset($_POST['otherInfo']) ? $otherInfo : ''; ?></textarea>
                     </div>
                 </div>
+                <input type="text" name="extra-form" class="extra-form">
                 <button <?php echo $disableForm; ?> class="button is-primary submit" name="submit" type="submit">Get a Quote</button>
             </form>
         </div>

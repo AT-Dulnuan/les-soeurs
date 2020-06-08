@@ -7,7 +7,8 @@
 		
 		$fullName = htmlspecialchars($_POST['fullName']);
 		$email = htmlspecialchars($_POST['email']);
-		$formMessage = htmlspecialchars($_POST['formMessage']);
+        $formMessage = htmlspecialchars($_POST['formMessage']);
+        $extra = htmlspecialchars($_POST['extra-form']);
 
 		
 		if(!empty($fullName) && !empty($email) && !empty($formMessage)){
@@ -18,7 +19,7 @@
 				$msgType = 'is-danger';
 			} else {
 				
-				$toEmail = 'info@lessoeurs.com.ph';
+				$toEmail = 'info@lessoeursph.com';
 				$subject = 'Contact Request From '.$fullName;
 				$body = '<h2>Contact Form</h2>
                     <p><strong>Full Name: </strong>'.$fullName.'</p>
@@ -31,19 +32,21 @@
 				$headers .="Content-Type:text/html;charset=UTF-8" . "\r\n";
 
 				
-				$headers .= "From: " .$fullName. "<".$email.">". "\r\n";
+                $headers .= "From: " .$fullName. "<".$email.">". "\r\n";
+                
+                if(empty($extra)) {
 
-				if(mail($toEmail, $subject, $body, $headers)){
-					
-					$msgText = 'Your email has been sent successfully! We will get back to you shortly.';
-                    $msgType = 'is-success';
-                    $disableForm = 'disabled';
-				} else {
-					
-					$msgText = 'Unfortunately, your email was not sent. Please try again in a while.';
-					$msgType = 'is-danger';
-				}
-			}
+                    if(mail($toEmail, $subject, $body, $headers)) {
+                        $msgText = 'Your email has been sent successfully! We will get back to you shortly.';
+                        $msgType = 'is-success';
+                        $disableForm = 'disabled';
+                    } else {                   
+                        $msgText = 'Unfortunately, your email was not sent. Please try again in a while.';
+                        $msgType = 'is-danger';
+                    }
+                }
+            }
+
 		} else {
 			$msgText = 'Kindly fill in all the fields';
 			$msgType = 'is-danger';
@@ -57,7 +60,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Souers | Contact Us</title>
+    <title>Les Soeurs | Contact Us</title>
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -120,30 +123,35 @@
     <section class="section contact-form" data-aos="fade" data-aos-duration="1000">
         <div class="container">
             <?php if($msgText != ''): ?>
-                <div class="notification <?php echo $msgType; ?> is-light has-text-centered">
-                    <?php echo $msgText; ?>
-                </div>
+            <div class="notification <?php echo $msgType; ?> is-light has-text-centered">
+                <?php echo $msgText; ?>
+            </div>
             <?php endif; ?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="field">
                     <label class="label">Full Name</label>
                     <div class="control">
-                        <input class="input" type="text" name="fullName" placeholder="eg: John Doe" value="<?php echo isset($_POST['fullName']) ? $fullName : ''; ?>">
+                        <input class="input" type="text" name="fullName" placeholder="eg: John Doe"
+                            value="<?php echo isset($_POST['fullName']) ? $fullName : ''; ?>">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Email</label>
                     <div class="control">
-                        <input class="input" type="email" name="email" placeholder="eg: john.doe@mail.com" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
+                        <input class="input" type="email" name="email" placeholder="eg: john.doe@mail.com"
+                            value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Message</label>
                     <div class="control">
-                        <textarea class="textarea" name="formMessage" placeholder="Type your message here..."><?php echo isset($_POST['formMessage']) ? $formMessage : ''; ?></textarea>
+                        <textarea class="textarea" name="formMessage"
+                            placeholder="Type your message here..."><?php echo isset($_POST['formMessage']) ? $formMessage : ''; ?></textarea>
                     </div>
                 </div>
-                <button <?php echo $disableForm; ?> class="button is-primary submit" name="submit" type="submit">Submit</button>
+                <input type="text" name="extra-form" class="extra-form">
+                <button <?php echo $disableForm; ?> class="button is-primary submit" name="submit"
+                    type="submit">Submit</button>
             </form>
         </div>
     </section>
