@@ -341,18 +341,84 @@ footer {
     }
 }
 
-#project1 {
-    section.hero {
-        background-image: linear-gradient(
-            to bottom right,
-            rgba($dark, 0.3),
-            rgba($dark, 0.7)),
-            url("../assets/project1-header.jpg");
-        background-size: cover;
-        background-position: center;
+#project {
+    h1 {
+        font-size: 1.8rem;
     }
 
-    #image-gallery {
+    &.project1 {
+        section.hero {
+            background-image: linear-gradient(
+                to bottom right,
+                rgba($dark, 0.3),
+                rgba($dark, 0.7)),
+                url("../assets/projects/p1-header.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &.project2 {
+        section.hero {
+            background-image: linear-gradient(
+                to bottom right,
+                rgba($dark, 0.3),
+                rgba($dark, 0.7)),
+                url("../assets/projects/p2-header.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &.project3 {
+        section.hero {
+            background-image: linear-gradient(
+                to bottom right,
+                rgba($dark, 0.3),
+                rgba($dark, 0.7)),
+                url("../assets/projects/p3-header.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &.project4 {
+        section.hero {
+            background-image: linear-gradient(
+                to bottom right,
+                rgba($dark, 0.3),
+                rgba($dark, 0.7)),
+                url("../assets/projects/p4-header.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &.project5 {
+        section.hero {
+            background-image: linear-gradient(
+                to bottom right,
+                rgba($dark, 0.3),
+                rgba($dark, 0.7)),
+                url("../assets/projects/p5-header.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &.project6 {
+        section.hero {
+            background-image: linear-gradient(
+                to bottom right,
+                rgba($dark, 0.3),
+                rgba($dark, 0.7)),
+                url("../assets/projects/p6-header.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    .image-gallery {
         .img-container {
             width: 100%;
             height: 100%;
@@ -360,7 +426,7 @@ footer {
         }
     }
 
-    #image-gallery img {
+    .image-gallery img {
         -webkit-transform: scale(1);
         transform: scale(1);
         -webkit-transition: .3s ease-in-out;
@@ -369,7 +435,7 @@ footer {
         height: 100%;
     }
 
-    #image-gallery a:hover img {
+    .image-gallery a:hover img {
         -webkit-transform: scale(1.2);
         transform: scale(1.2);
     }
@@ -497,7 +563,11 @@ footer {
         }
     }
 
-    #project1 {
+    #project {
+        h1 {
+            font-size: 3rem;
+        }
+
         #image-gallery {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
