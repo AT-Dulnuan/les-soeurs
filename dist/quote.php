@@ -107,6 +107,7 @@
                     <a href="about.html" class="navbar-item nav-link">About</a>
                     <a href="services.html" class="navbar-item nav-link">Services</a>
                     <a href="projects.html" class="navbar-item nav-link">Projects</a>
+                    <a href="gallery.html" class="navbar-item nav-link">Gallery</a>
                     <a href="contact.php" class="navbar-item nav-link">Contact</a>
                     <p class="navbar-item">
                         <a href="quote.php" class="button is-primary has-text-white">Get a Quote</a>
@@ -120,6 +121,7 @@
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                     <li><a href="contact.php" class="nav-link">Contact</a></li>
                     <li><a href="quote.php" class="button is-primary has-text-white">Get a Quote</a></li>
                 </ul>
@@ -215,6 +217,7 @@
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                     <li><a href="contact.php" class="nav-link">Contact</a></li>
                     <li><a class="button is-primary" href="quote.php">Get a Quote</a></li>
                 </ul>
