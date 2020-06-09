@@ -161,12 +161,35 @@ input.extra-form {
   #home section.about-stack button {
     margin-top: 1.3rem; }
 
-#home section.services-stack .column {
-  margin: 1.5rem auto; }
+#home section.harvest .banner {
+  height: 60vh;
+  background-image: url("../assets/harvest-ext-1.jpg");
+  background-size: cover;
+  background-position: center; }
+  #home section.harvest .banner .overlay {
+    background-color: rgba(34, 34, 34, 0.7);
+    height: 100%;
+    width: 100%;
+    position: relative; }
+  #home section.harvest .banner .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF; }
 
-#home section.services-stack img.service-icon {
-  height: 100px;
-  margin: 1rem auto; }
+#home section.harvest .container {
+  margin-top: 1.3rem; }
+
+#home section.services-stack {
+  background-color: #F9F9F9; }
+  #home section.services-stack .column {
+    margin: 1.5rem auto; }
+  #home section.services-stack img.service-icon {
+    height: 100px;
+    margin: 1rem auto; }
 
 .tile-container {
   position: relative;
@@ -213,17 +236,18 @@ input.extra-form {
     height: 100%;
     width: 100%; }
 
-#projects section.hero {
-  background-image: linear-gradient(to bottom right, rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.7)), url("../assets/projects-header.jpg");
-  background-size: cover;
-  background-position: center; }
-
-#projects h3 {
-  font-size: 1.4rem;
+#projects {
   text-align: center; }
-
-#projects p.address {
-  margin-bottom: 1.3rem; }
+  #projects section.hero {
+    background-image: linear-gradient(to bottom right, rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.7)), url("../assets/projects-header.jpg");
+    background-size: cover;
+    background-position: center; }
+  #projects h3 {
+    font-size: 1.4rem; }
+  #projects ul {
+    direction: ltr; }
+  #projects p.address {
+    margin-bottom: 1.3rem; }
 
 #gallery section.hero {
   background-image: linear-gradient(to bottom right, rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.7)), url("../assets/gallery-header.jpg");
@@ -311,24 +335,30 @@ input.extra-form {
     align-self: center; }
   #services section.move-in .image-container {
     height: 500px; }
-  #projects h3 {
-    font-size: 2rem;
-    text-align: left;
-    margin-bottom: 2rem; }
-  #projects .columns {
-    align-items: center;
-    margin-bottom: 5rem; }
-    #projects .columns .content {
-      margin: 3rem 0; }
-    #projects .columns .reverse {
-      text-align: right; }
-      #projects .columns .reverse h3 {
-        text-align: right; }
-      #projects .columns .reverse li {
-        direction: rtl; }
-    #projects .columns img {
-      object-fit: contain;
-      max-height: 700px; } }
+  #projects {
+    text-align: left; }
+    #projects h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem; }
+    #projects .columns {
+      align-items: center;
+      margin-bottom: 5rem; }
+      #projects .columns p.address {
+        text-align: left; }
+      #projects .columns.reverse {
+        text-align: right;
+        flex-direction: row-reverse; }
+        #projects .columns.reverse p.address {
+          text-align: right; }
+        #projects .columns.reverse h3 {
+          text-align: right; }
+        #projects .columns.reverse li {
+          direction: rtl; }
+      #projects .columns .content {
+        margin: 3rem 0; }
+      #projects .columns img {
+        object-fit: contain;
+        max-height: 700px; } }
 
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {

@@ -246,7 +246,38 @@ input.extra-form {
         }
     }
 
+    section.harvest {
+        .banner {
+            height: 60vh;
+            background-image: 
+            url("../assets/harvest-ext-1.jpg");
+            background-size: cover;
+            background-position: center;
+
+            .overlay {
+                background-color: rgba($dark, 0.7);
+                height: 100%;
+                width: 100%;
+                position: relative;
+            }
+            .overlay-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                text-align: center;
+                color: $white;
+            }
+        }
+
+        .container {
+            margin-top: 1.3rem;
+        }
+    }
+
     section.services-stack {
+        background-color: $dark-white;
         .column {
             margin: 1.5rem auto;
         }
@@ -345,10 +376,14 @@ input.extra-form {
         background-size: cover;
         background-position: center;
     }
+    text-align: center;
 
     h3 {
         font-size: 1.4rem;
-        text-align: center;
+    }
+
+    ul {
+        direction: ltr;
     }
 
     p.address {
@@ -530,9 +565,9 @@ input.extra-form {
     }
 
     #projects {
+        text-align: left;
         h3 {
             font-size: 2rem;
-            text-align: left;
             margin-bottom: 2rem;
         }
 
@@ -540,12 +575,17 @@ input.extra-form {
             align-items: center;
             margin-bottom: 5rem;
 
-            .content {
-                margin: 3rem 0;
+            p.address {
+                text-align: left;
             }
 
-            .reverse {
+            &.reverse {
                 text-align: right;
+                flex-direction: row-reverse;
+
+                p.address {
+                    text-align: right;
+                }
 
                 h3 {
                     text-align: right;
@@ -553,6 +593,10 @@ input.extra-form {
                 li {
                     direction: rtl;
                 }
+            }
+
+            .content {
+                margin: 3rem 0;
             }
 
             img {
